@@ -1,89 +1,144 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/10.4.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/10.4.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/10.4.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/10.4.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/10.4.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/10.4.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/10.4.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/10.4.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/10.4.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/10.4.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <style media="screen">
-      body { background: #0dde37; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome to the future site of:</h2>
-      <h1>Zen Cubicle Massage</h1>
-      <p>You're seeing this because you've successfully found an extraordinary massage business!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Website Building Help</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Zen Cubicle - Mobile Chair Massage</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: 'anticregular', Arial, Helvetica, sans-serif;
+            font-size: large;
+            margin: 0;
+            padding: 0;
         }
-      });
-    </script>
-  </body>
+
+        h1 {
+            font-family: 'alluraregular', Arial, Helvetica, sans-serif;
+            font-size: 3rem;
+        }
+
+
+@font-face {
+    font-family: 'alluraregular';
+    src: url('allura-regular-webfont.woff2') format('woff2'),
+         url('allura-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'anticregular';
+    src: url('antic-regular-webfont.woff2') format('woff2'),
+         url('antic-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+        header {
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+        }
+
+        #logo {
+            background-image: url(./image/website_logo.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            min-width: 60%;
+            min-height: 240px;
+        }
+
+        section {
+            padding: 20px;
+            text-align: flex-start;
+            padding-left: 20%;
+            padding-right: 20%;
+        }
+
+        #hero {
+            display: flex;
+            background-image: url(./image/lotus_splash.jpg);
+            background-size: cover;
+            height: 280px;
+            color: #eefff0;
+            justify-content: flex-end;
+            padding-right: 10%;
+        }
+
+        #contact {
+            background-color: #000000;
+            color: #eefff0;;
+        }
+
+        #benefits {
+            background-color: #eefff0;
+            color: #000000;
+        }
+
+        #services {
+            background-color: #000000;
+            color: #eefff0;;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+        }
+
+        picture {
+            width: fit-content;
+            height: 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+
+        </div>
+    </header>
+
+    <section id="hero">
+        <h1>Unwind at work</h1>
+    </section>
+
+    <section id="contact">
+        <h2>Bring tranquility to the office</h2>
+        <p>Phone: 281-773-9367</p>
+        <p>Email: daniel.wukasch@zencubicle-massage.com</p>
+    </section>
+
+    <section id="benefits">
+        <h2>Personal Benefits</h2>
+        <ul>
+            <li><strong>Stress Reduction </strong><br> Relax and unwind, reducing stress and anxiety levels.</li><br>
+            <li><strong>Enhanced Immunity</strong><br> Reduced stress and improved circulation can strengthen the immune system.</li><br>
+            <li><strong>Mental Clarity</strong><br> Improve focus and mental clarity.</li><br>
+            <li><strong>Boosted Morale</strong><br> Increase job satisfaction and morale.</li>
+        </ul>
+
+        <h2>Business Benefits</h2>
+        <ul>
+            <li><strong>Increased Productivity</strong><br>Relaxed and rejuvenated employees are more focused and productive.</li><br>
+            <li><strong>Lowered Healthcare Costs</strong><br> Employees experiencing less pain and stress are less likely to require medical intervention for stress-related issues.</li><br>
+            <li><strong>Improved Employee Retention</strong><br> A positive and supportive workplace environment enhances employee loyalty and reduces turnover rates.</li><br>
+            <li><strong>Enhanced Company Image</strong><br> A company that invests in employee well-being can improve its reputation among clients, partners, and potential employees.</li>
+        </ul>
+    </section>
+
+    <section id="services">
+        <h2>How it works</h2>
+        <p></p>
+        <p>Each chair massage session can be booked for as little as 10 minutes or as long as 30 minutes. Appointments longer than 30 minutes are best accomodated by a table massage.</p>
+        <p>The only requirement is a clear space about 6 feet by 6 feet.</p>
+        <p>All other accomodations are provided including relaxing spa music, disposable face covers and sanitizing gear.</p> 
+    </section>
+
+</body>
+
 </html>
+
